@@ -17,24 +17,21 @@ int Right = 0;
 void LEFT (void) {
     analogWrite(mot3, 0);//don't change this
     analogWrite(mot4, 10);//change this for speed
-   
-	  while (Left == 0) {
-	      Left = digitalRead(left);
-	      Right = digitalRead(right);
-
-		    if (Right == 0) {
-		        int lprev = Left;
-		        int rprev = Right;
-		        STOP();
-
-	          while (((lprev == Left) && (rprev == Right)) == 1) {
-	              Left = digitalRead(left);
-	              Right = digitalRead(right);
-	          }
-		    }
-	      analogWrite(mot1, 100);//change this for speed
-	      analogWrite(mot2, 0);//don't change this
-	  }
+    while (Left == 0) {
+        Left = digitalRead(left);
+        Right = digitalRead(right);
+        if (Right == 0) {
+            int lprev = Left;
+            int rprev = Right;
+            STOP();
+            while (((lprev == Left) && (rprev == Right)) == 1) {
+                Left = digitalRead(left);
+                Right = digitalRead(right);
+            }
+        }
+        analogWrite(mot1, 100);//change this for speed
+        analogWrite(mot2, 0);//don't change this
+    }
     analogWrite(mot3, 100);//change this for speed
     analogWrite(mot4, 0);//don't change this
 }
@@ -43,26 +40,23 @@ void LEFT (void) {
 void RIGHT (void) {
     analogWrite(mot1, 0);//don't change this
     analogWrite(mot2, 10);//change this for speed
-
     while (Right == 0) {
-	      Left = digitalRead(left);
-	      Right = digitalRead(right);
-
-		    if (Left == 0) {
-		        int lprev = Left;
-		        int rprev = Right;
-		        STOP();
-            
-			      while (((lprev == Left) && (rprev == Right)) == 1){
-			          Left = digitalRead(left);
-			          Right = digitalRead(right);
-			      }
-        }
-        analogWrite(mot3, 100);//change this for speed
-        analogWrite(mot4, 0);//don't change this
+        Left = digitalRead(left);
+        Right = digitalRead(right);
+            if (Left == 0) {
+                int lprev = Left;
+                int rprev = Right;
+                STOP();
+                while (((lprev == Left) && (rprev == Right)) == 1){
+                    Left = digitalRead(left);
+                    Right = digitalRead(right);
+                }
+            }
+            analogWrite(mot3, 100);//change this for speed
+            analogWrite(mot4, 0);//don't change this
     }
-   analogWrite(mot1, 100);//change this for speed
-   analogWrite(mot2, 0);//don't change this
+    analogWrite(mot1, 100);//change this for speed
+    analogWrite(mot2, 0);//don't change this
 }
 
 void STOP (void){
@@ -75,13 +69,13 @@ void STOP (void){
 void setup () {
     lcd.begin(16, 2);
     lcd.setCursor(0, 0);
-	  lcd.print("(0)   /_    (0)");
+    lcd.print("(0)   /_    (0)");
     lcd.setCursor(0, 1);
-	  lcd.print("   \______/  ");
-	  lcd.clear();
+    lcd.print("   \______/  ");
+    lcd.clear();
     lcd.setCursor(0, 1);
-	  lcd.print("LNE FOLWING ROBO");
-	
+    lcd.print("LNE FOLWING ROBO");
+    
     pinMode(mot2, OUTPUT);
     pinMode(mot1, OUTPUT);
     pinMode(mot3, OUTPUT);
@@ -99,23 +93,21 @@ void loop () {
     analogWrite(mot2, 0);
     analogWrite(mot3, 100);
     analogWrite(mot4, 0);
-
     while (1) {
-      Left = digitalRead(left);
-	    Right = digitalRead(right);
-	  
-		  if ((Left == 0 && Right == 1) == 1) {
-			    LEFT();
-          lcd.begin(16, 2);
-		 	    lcd.setCursor(6, 1);
-	  		  lcd.print("LEFT");
-	  		  delay(200);
-		  } else if ((Right == 0 && Left == 1) == 1) {
-			    RIGHT();
-		      lcd.begin(16, 2);
-		  	  lcd.setCursor(6, 1);
-	  		  lcd.print("RIGHT");
-	  		  delay(200);
-		  }
+        Left = digitalRead(left);
+        Right = digitalRead(right);
+        if ((Left == 0 && Right == 1) == 1) {
+            LEFT();
+            lcd.begin(16, 2);
+            lcd.setCursor(6, 1);
+            lcd.print("LEFT");
+            delay(200);
+        } else if ((Right == 0 && Left == 1) == 1) {
+            RIGHT();
+            lcd.begin(16, 2);
+            lcd.setCursor(6, 1);
+            lcd.print("RIGHT");
+            delay(200);
+        }
     }
 }
