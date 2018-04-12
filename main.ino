@@ -15,8 +15,8 @@ int Left = 0;
 int Right = 0;
 
 void LEFT (void) {
-    analogWrite(mot3, 0);//don't change this
-    analogWrite(mot4, 10);//change this for speed
+    analogWrite(mot3, 0);
+    analogWrite(mot4, 10);
     while (Left == 0) {
         Left = digitalRead(left);
         Right = digitalRead(right);
@@ -29,17 +29,17 @@ void LEFT (void) {
                 Right = digitalRead(right);
             }
         }
-        analogWrite(mot1, 100);//change this for speed
-        analogWrite(mot2, 0);//don't change this
+        analogWrite(mot1, 100);
+        analogWrite(mot2, 0);
     }
-    analogWrite(mot3, 100);//change this for speed
-    analogWrite(mot4, 0);//don't change this
+    analogWrite(mot3, 100);
+    analogWrite(mot4, 0);
 }
 
 
 void RIGHT (void) {
-    analogWrite(mot1, 0);//don't change this
-    analogWrite(mot2, 10);//change this for speed
+    analogWrite(mot1, 0);
+    analogWrite(mot2, 10)
     while (Right == 0) {
         Left = digitalRead(left);
         Right = digitalRead(right);
@@ -52,11 +52,11 @@ void RIGHT (void) {
                     Right = digitalRead(right);
                 }
             }
-            analogWrite(mot3, 100);//change this for speed
-            analogWrite(mot4, 0);//don't change this
+            analogWrite(mot3, 100);
+            analogWrite(mot4, 0);
     }
-    analogWrite(mot1, 100);//change this for speed
-    analogWrite(mot2, 0);//don't change this
+    analogWrite(mot1, 100);
+    analogWrite(mot2, 0);
 }
 
 
