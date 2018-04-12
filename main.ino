@@ -59,12 +59,14 @@ void RIGHT (void) {
     analogWrite(mot2, 0);//don't change this
 }
 
+
 void STOP (void){
     analogWrite(mot1, 0);
     analogWrite(mot2, 0);
     analogWrite(mot3, 0);
     analogWrite(mot4, 0);
 }
+
 
 void setup () {
     lcd.begin(16, 2);
@@ -88,6 +90,7 @@ void setup () {
     digitalWrite(right, HIGH);
 }
 
+
 void loop () {
     analogWrite(mot1, 100);
     analogWrite(mot2, 0);
@@ -110,4 +113,3 @@ void loop () {
             delay(200);
         }
     }
-}
