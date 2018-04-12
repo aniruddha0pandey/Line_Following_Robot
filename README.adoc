@@ -1,0 +1,53 @@
+:Author: Aniruddha Pandey
+:Email: anirudh.pandev@gmail.com
+:Date: 04-11-2017
+:Revision: version#2
+:License: Public Domain
+
+= Project: {Line Following Robot}
+
+Refer README.md
+
+== Step 1: Installation
+. Open this file
+. Edit as you like
+. Release to the World!
+
+== Step 2: Assemble the circuit
+Assemble the circuit following the diagram layout.png attached to the sketch. +
+Sorry ;(, I lost that image.
+
+== Step 3: Load the code
+Upload the code contained in this sketch on to your board.
+
+=== Folder structure
+....
+ MyProject                => Arduino sketch folder
+  ├── main.ino            => main Arduino file
+  ├── README.md      
+  ├── layout.png          => an image of the layout
+  └── ReadMe.adoc         => this file
+....
+
+=== License
+This project is released under a {PUBLIC} License.
+
+=== Contributing
+To contribute to this project please contact aniruddha0pandey <anirudh.pandev@gmail.com>.
+
+=== BOM
+This field should contain Bill of the materials I've used but I lost that too ;(.
+
+|===
+| ID | Part name      | Part number | Quantity
+| MR | Electric Motor |NTL-12VDCM   | 10       
+| IR | IR Sensor      |STL015V1_0   | 2        
+| A1 | Arduino UNO    |REES52       | 1   
+|404 |forgot the rest |Error        | X 
+|===
+
+
+=== Help
+This document is written in the _AsciiDoc_ format, a markup language to describe documents. 
+If you need help you can search the http://www.methods.co.nz/asciidoc[AsciiDoc homepage].
+or consult the http://powerman.name/doc/asciidoc[AsciiDoc cheatsheet].
